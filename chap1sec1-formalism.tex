@@ -1,7 +1,7 @@
 % !TEX root = highertopoi.tex
 \section{Foundations for Higher Category Theory}
 \subsection{Goals and Obstacles}\label{highcat}
-
+\begin{1.1.1 Goals and Obstacles}
 Recall that a {\it category}\index{gen}{category} $\calC$ consists of the following data:
 \begin{itemize}
 \item[$(1)$] A collection $\{ X, Y, Z, \ldots \}$ whose members are the {\it objects} of $\calC$. We typically
@@ -285,8 +285,9 @@ technical point which the reader may safely ignore.
 \end{remark}
 
 It is possible to use Definition \ref{ic} as a foundation for higher category theory: that is, to {\em define} an $\infty$-category to be a topological category. However, this approach has a number of technical disadvantages. We will describe an alternative (though equivalent) formalism in the next section.
-
+\end{1.1.1 Goals and Obstacles}
 \subsection{$\infty$-Categories}\label{qqqc}
+\begin{1.1.2 inf-Categories}
 
 Of the numerous formalizations of higher category theory, Definition \ref{ic} is the quickest and most transparent. However, it is one of the most difficult to actually work with: many of the basic constructions of higher category theory give rise most naturally to $(\infty,1)$-categories for which the composition of
 morphisms is associative only up to (coherent) homotopy (for several examples of this phenomenon, we refer the reader to \S \ref{langur}). In order to remain in the world of topological categories, it is necessary to combine these constructions with a ``straightening'' procedure which
@@ -612,9 +613,9 @@ when we wish to contrast the theory of $\infty$-categories with some
 other other approach to higher category theory, such as the theory
 of topological categories.
 \end{notation}
-
+\end{1.1.2 inf-Categories}
 \subsection{Equivalences of Topological Categories}\label{stronghcat}
-
+\begin{1.1.3 Equivalences of Top Cats}
 We have now introduced two approaches to higher category theory: one based on topological categories, and one based on simplicial sets. These two approaches turn out to be equivalent to one another. However, the equivalence itself needs to be understood in a higher-categorical sense. We take our cue from classical homotopy theory, in which we can take the basic objects to be either topological spaces or simplicial sets. It is not true that every Kan complex is isomorphic to the singular complex of a topological space, or that every CW complex is homeomorphic to the geometric realization of a simplicial set. However, both of these statements become true if we replace the words ``isomorphic to'' by ``homotopy equivalent to''. We would like to formulate a similar statement regarding our approaches to higher category theory. The first step is to find a concept which replaces ``homotopy equivalence''. If $F: \calC \rightarrow \calD$ is a functor between topological categories, under what circumstances should we regard $F$ as an ``equivalence'' (so that $\calC$ and $\calD$ really represent the same higher category)? 
 
 The most naive answer is that $F$ should be regarded as an equivalence if it is an isomorphism of topological categories. This means that $F$ induces a bijection between the objects of $\calC$ and the objects of $\calD$, and a homeomorphism $\bHom_{\calC}(X,Y) \rightarrow \bHom_{\calD}(F(X),F(Y))$ for every pair of objects $X,Y \in \calC$. However, it is immediately obvious that this condition is far too strong; for example, in the case where $\calC$ and $\calD$ are ordinary categories (which we may view also as topological categories, where all morphism sets are endowed with the discrete topology), we recover the notion of an isomorphism between categories. This notion does not play an important role in category theory. One rarely asks whether or not two categories are isomorphic; instead, one asks whether or not they are equivalent. This suggests the following definition:
@@ -736,9 +737,9 @@ According to Definition \ref{defequiv}, a functor $F: \calC \rightarrow \calD$ i
 which is sufficiently powerful to detect equivalences between $\infty$-categories.
 This should be regarded as analogous to the more classical fact that the homotopy groups $\pi_i(X,x)$ of a CW complex $X$ are homotopy invariants which detect homotopy equivalences between CW complexes (by Whitehead's theorem). However, it is important to remember that $\h{ \calC}$ does not determine $\calC$ up to equivalence, just as the homotopy type of a CW complex is not determined by its homotopy groups.
 \end{remark}
-
+\end{1.1.3 Equivalences of Top Cats}
 \subsection{Simplicial Categories}\label{compp1}
-
+\begin{1.1.4 Simplicial Categories}
 In the previous sections we introduced two very different approaches to the foundations of higher category theory: one based on topological categories, the other on simplicial sets. In order to prove that they are equivalent to one another, we will introduce a third approach,  which is closely related to the first but shares the combinatorial flavor of the second.
 
 \begin{definition}\index{gen}{simplicial category}\index{gen}{category!simplicial}
@@ -815,17 +816,17 @@ $$ \calC \rightarrow \Sing | \calC |$$
 $$ | \Sing \calD | \rightarrow \calD$$
 induce {\em isomorphisms} between homotopy categories. Consequently, if we are working with topological or simplicial categories {\it up to equivalence}, we are always free to replace a simplicial category $\calC$ by $|\calC|$, or a topological category $\calD$ by $\Sing \calD$. In this sense, the notions of topological and simplicial category are equivalent and either can be used as a foundation for higher category theory.
 \begin{shaded}
-A functor of simplicial categories is an equivalence if the induced functor on homotopy categories is an equivalence of $\calH$-enriched categories, as we defined earlier for topological categories.
+A functor of simplicial categories is an \textit{equivalence} if the induced functor on homotopy categories is an equivalence of $\calH$-enriched categories, as we defined earlier for topological categories.
 
 From the Quillen equivalence \smash{$\Adjoint{}{\sSet}{\CG}{}$} we obtain unit and counit maps $ \calC \rightarrow \Sing | \calC |$ and $ | \Sing \calD | \rightarrow \calD$ which induce isomorphisms on homotopy categories. Thus if we work \textit{up to equivalence}, it is equivalent to work with either simplicial or topological categories. All that remains is the following:
 \end{shaded}
-
+\end{1.1.4 Simplicial Categories}
 \subsection{Comparing $\infty$-Categories with Simplicial Categories}\label{theequiv}
-
+\begin{1.1.5 inf-cats vs simplicial cats}
 In \S \ref{compp1}, we introduced the theory of simplicial categories and explained why (for our purposes) it is equivalent to the theory of topological categories. In this section, we will show that the theory of simplicial categories is also closely related to the theory of $\infty$-categories.
 Our discussion requires somewhat more elaborate constructions than were needed in the previous sections; a reader who does not wish to become bogged down in details is urged to skip ahead to \S \ref{working}. \ldots
 \begin{shaded}
-I haven't read this section fully. However, the following things happened:
+Before reading this section fully, I made the following summary:
 \begin{itemize}\squishlist
 \item 
 \begin{itemize}\squishlist
@@ -834,7 +835,7 @@ I haven't read this section fully. However, the following things happened:
 \item Just like the usual nerve, the simplicial nerve is defined by an adjunction:
 \[\Hom_{ \sSet}( \Delta^n, \Nerve(\calC)) =
 \Hom_{\sCat}( \sCoNerve[ \Delta^n ], \calC).\]
-\item The point here is that $\sCoNerve[ \Delta^n ]$ is a thickened version of the category $[n]$, which is more simplicial.
+\item The point here is that simplicial category $\sCoNerve[ \Delta^n ]$ is a thickened version of the category $[n]$.
 \item The adjunction may be written as
 $\xymatrix@R=.3cm@C=1cm{
 \sSet  \ar@<.6ex>[r]^{\sCoNerve[\bigdot]}&
@@ -864,11 +865,8 @@ is a categorical equivalence of simplicial sets.
 \item Although not every simplicial set is an $\infty$-category, it is categorically equivalent to one, even the nerve of the topological category $|\sCoNerve[S]|$.
 \end{itemize}
 \end{itemize}
-
-
 \end{shaded}
 
-%\begin{Didn't Read}
 
 We will relate simplicial categories with simplicial sets by means of the {\it simplicial nerve functor}
 $$ \sNerve: \sCat \rightarrow \sSet,$$
@@ -912,6 +910,12 @@ are elements of the set $[n] = \{ 0, \ldots, n\}$. For each
 $0 \leq i \leq j \leq n$, the topological space $\bHom_{ |\sCoNerve[\Delta^n]| }(i,j)$ is homeomorphic to a cube; it may be identified with the set of all functions $p: \{ k \in [n]: i \leq k \leq j \} \rightarrow [0,1]$ which satisfy $p(i) = p(j) =
 1$. The morphism space $\bHom_{ | \sCoNerve[\Delta^n] |}(i,j)$ is empty when
 $j < i$, and composition of morphisms is given by concatenation of functions.
+\begin{shaded}
+We need an awesome simplicial model for the category $[n]$, and that is what's here. Given $i<j$ in the linearly ordered set $J$, consider the poset $P_{i,j}$ of subsets of the interval $[i,j]$ that contain the endpoints $i$ and $j$. We could draw this poset as a cube, of dimension $\#(i,j)$. Thus, its nerve, a simplicial set, has realisation a cube --- it is contractible.
+
+The above definition gives a recipe for a well defined composition on hom-sSets. One hopes that this recipe is good enough, and it is. The unique functor $\sCoNerve[\Delta^n]\to[n]$ which is the identity on objects is in fact an equivalence of simplicial categories.
+\end{shaded}
+
 
 \begin{remark}\label{conervexp}
 Let us try to understand better the simplicial category $\sCoNerve[\Delta^n]$ and its relationship to the ordinary category $[n]$. These categories have the same objects, namely the elements of $\{ 0, \ldots, n\}$.
@@ -963,6 +967,12 @@ Consequently, we deduce that $\sCoNerve$ determines a functor
 $$ \cDelta \rightarrow \sCat$$
 $$ \Delta^n \mapsto \sCoNerve[ \Delta^n ],$$
 which we may view as a cosimplicial object of $\sCat$.
+\begin{shaded}
+The real game is to make $\sCoNerve[\Delta^\bigdot]$ a cosimplicial object of $\sCat$, so that mapping from the $\sCoNerve[\Delta^\bigdot]$ to a simplicial category $\calC$ gives a simplicial set. Well, this is not difficult, as a map of linearly ordered sets $J\to J'$ induces a map of simplicial categories $\sCoNerve[\Delta^J]\to \sCoNerve[\Delta^{J'}]$, basically by mapping one cube onto a face of another, perhaps with some degeneracy.
+
+Mapping out of $\sCoNerve[\Delta^\bigdot]$ gives the required simplicial set:
+%It is remarked that $\sCoNerve:\Delta\to\sCat$, when viewed as a functor $(\Delta)^\Delta\to(\sCat)^\Delta$, is cofibrant replacement, under a suitable model structure.
+\end{shaded}
 
 \begin{definition}\index{gen}{simplicial nerve}\index{gen}{nerve!of a simplicial category}\index{not}{NervecalC@$\Nerve(\calC)$}\label{topnerve}
 Let $\calC$ be a simplicial category. The {\it simplicial nerve}
@@ -1015,6 +1025,21 @@ To give a $2$-simplex of $\tNerve(\calC)$ having this specified boundary is equi
 giving a path from $f_{XZ}$ to $f_{YZ} \circ f_{XY}$ in
 $\bHom_{\calC}(X,Z)$.
 \end{itemize}
+\begin{shaded}
+We have two functors, and would like a third:
+\[\xymatrix{
+\Delta\ar[r]^\sCoNerve\ar[d]&\sCat\\
+\sSet\ar@{-->}[ur]^\sCoNerve
+}\]
+The functor $\Delta\to\sSet$ is just the inclusion of the standard simplices. That is, given $J\in\Delta$, one has the simplicial set $\bHom_{\Delta}(\DASH,J)$, which is a standard simplicial model for the simplex with vertices $J$. Now $\sCat$ admits small colimits, so that the dotted $\sCoNerve$ exists. 
+
+The thinking here should be that any simplicial set is the colimit of a bunch of simplices. In fact [see Akhil's notes on Dold-Kan]  \textit{any presheaf on a small category $\calC$ is canonically the colimit of representable presheaves $\calC$.}
+By the way, one can think about geometric realisation in these terms, which is the extension to $\sSet$ of the obvious functor $\Delta\to\Top$.
+
+Anyway, what the functor $\sCoNerve$ does to a simplicial set is to view it as a colimit of simplices, and to fatten every simplex in a canonical way. Lurie writes something different in the next paragraph.
+
+Now $\sCoNerve$ is a left adjoint to $\sNerve$, the simplicial nerve, by construction (as $\sCoNerve$ preserves colimits, and using the definition).
+\end{shaded}
 
 The category $\sCat$ of simplicial categories admits (small)
 colimits. Consequently, by formal nonsense, the functor
@@ -1089,6 +1114,12 @@ objects. Then the counit map
 $$|\bHom_{\sCoNerve[\tNerve(\calC)]}(X,Y)| \rightarrow \bHom_{\calC}(X,Y)$$
 is a weak homotopy equivalence of topological spaces.
 \end{theorem}
+\begin{shaded}
+We have that whenever a simplicial category $\calC$ has fibrant hom-sSets, the simplicial nerve $\sNerve(\calC)$ is an $\infty$-category. In particular, the topological nerve of a topological category is always an $\infty$-category.
+
+We get an equivalence between ``the theory of simplicial sets (up to categorical equivalence)
+and that of topological categories (up to equivalence)''. See below, or in the summary at the start of this section, for details.
+\end{shaded}
 
 Assuming Theorem \ref{biggie}, we can now explain why the theory of $\infty$-categories is 
 equivalent to the theory of topological categories (or, equivalently, simplicial categories).
@@ -1127,7 +1158,6 @@ is a categorical equivalence of simplicial sets. In view of Remark \ref{gytyt}, 
 \begin{remark}
 The reader may at this point object that we have achieved a comparison between the theory of topological categories with the theory of simplicial sets, but that not every simplicial set is an $\infty$-category. However, every simplicial set is categorically equivalent to an $\infty$-category. In fact, Theorem \ref{biggie} implies that every simplicial set $S$ is categorically equivalent to the nerve of the topological category $| \sCoNerve[S] |$, which is an $\infty$-category (Corollary \ref{tooky}).
 \end{remark}
+\end{1.1.5 inf-cats vs simplicial cats}
 
 
-
-%\end{Didn't Read}

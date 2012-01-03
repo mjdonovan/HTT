@@ -7,16 +7,45 @@
 
 %\def\excludeversion#1{\includeversion{#1}}
 
-\excludeversion{chapters}
-\excludeversion{Didn't Read}
-\excludeversion{Already Read}
-
-
-
+\includeversion{chapters}
+\includeversion{Didn't Read}
+\includeversion{Already Read}
 
 \excludeversion{intro}
+
+%% CHAPTER ONE
+{
+%\def\excludeversion#1{\includeversion{#1}}
+\includeversion{1 Overview of Higher Category Theory}
+\includeversion{1.1 Formalism}
+\excludeversion{1.1.1 Goals and Obstacles}
+\excludeversion{1.1.2 inf-Categories}
+\excludeversion{1.1.3 Equivalences of Top Cats}
+\includeversion{1.1.4 Simplicial Categories}
+\includeversion{1.1.5 inf-cats vs simplicial cats}
+
+\includeversion{1.2 language}
+\excludeversion{1.2.1 Opposite of an inf-cat}
+\includeversion{1.2.2 Mapping spaces}
+\excludeversion{1.2.3 The homotopy category}
+\excludeversion{1.2.4 Objects, morphisms, equivalences}
+\excludeversion{1.2.5 inf-gpoids and classical homotopy}
+\excludeversion{1.2.6 Commutativity vs coherence}
+\excludeversion{1.2.7 Functors between higher cats}
+\excludeversion{1.2.8 Joins of inf-cats}
+\includeversion{1.2.9 Over- and under-categories}
+\excludeversion{1.2.10 F. faithful; E. surj functors}
+\excludeversion{1.2.11 Subcategories of inf-cats}
+\excludeversion{1.2.12 Initial and final objects}
+\excludeversion{1.2.13 Limits and colimits}
+\excludeversion{1.2.14 Presentations of inf-cats}
+\excludeversion{1.2.15 Set-Theoretic Technicalities}
+\excludeversion{1.2.16 The inf-cat of spaces}
+}
+
+
 \excludeversion{TOC}
-\includeversion{chapter1}
+\excludeversion{chapter2onwards}
 \excludeversion{Appendix}
 \excludeversion{EndMatter}
 
@@ -245,6 +274,8 @@
 
 \begin{document}
 
+\begin{intro}
+
 \title{Higher Topos Theory}
 \author{Jacob Lurie}
 
@@ -252,15 +283,14 @@
 % and explain how to use the theory of higher categories
 % PART I
 
-\begin{intro}
 \include{chap0-introduction}
 \end{intro}
 \begin{TOC}
 \tableofcontents
 \end{TOC}
 
-\begin{chapter1}
 \chapter{An Overview of Higher Category Theory}\label{chap1}
+\begin{1 Overview of Higher Category Theory}
 \setcounter{theorem}{0}
 \setcounter{subsection}{0}
 This chapter is intended as a general introduction to higher category theory. We begin with what we feel is the most intuitive approach to the subject, based on {\it topological categories}. This approach is easy to understand, but difficult to work with when one wishes to perform even simple categorical constructions. As a remedy, we will introduce the more suitable formalism of {\it $\infty$-categories} (called
@@ -270,11 +300,15 @@ Our goal in \S \ref{highcat} is to introduce both approaches and to explain why 
 
 Our second objective in this chapter is to give the reader an idea of how to work with the formalism of $\infty$-categories. In \S \ref{langur} we will establish a vocabulary which includes $\infty$-categorical analogues (often direct generalizations) of most of the important concepts from ordinary category theory. To keep the exposition brisk, we will postpone the more difficult proofs until later chapters of this book. Our hope is that, after reading this chapter, a reader who does not wish to be burdened with the details will be able to understand (at least in outline) some of the more conceptual ideas described in \S \ref{chap5} and beyond.
 
-\begin{Already Read}
+\setcounter{section}{0}
+\begin{1.1 Formalism}
 \include{chap1sec1-formalism}
-\end{Already Read}
+\end{1.1 Formalism}
+\setcounter{section}{1}
+\begin{1.2 language}
 \include{chap1sec2-language}
-\end{chapter1}
+\end{1.2 language}
+\end{1 Overview of Higher Category Theory}
 
 
 % the next parts are more technical
@@ -284,9 +318,11 @@ Our second objective in this chapter is to give the reader an idea of how to wor
 % and establish a few basic properties of the Joyal model structure
 
 % PART II
-\begin{Didn't Read}
+
+\begin{chapter2onwards}
 
 \chapter{Fibrations of Simplicial Sets}\label{chap2}
+
 
 \setcounter{theorem}{0}
 \setcounter{subsection}{0}
@@ -369,7 +405,6 @@ The theory of left fibrations (left anodyne maps) is {\em dual} to the theory of
 \include{chap2sec2-equivalence}
 \include{chap2sec3-midfib}
 \include{chap2sec4-cartfib}
-
 
 \chapter{The $\infty$-Category of $\infty$-Categories}\label{chap4}
 
@@ -554,7 +589,8 @@ of functors from the derived category of abelian sheaves on $X$ to the derived c
 \include{chap7sec1-paracompact}
 \include{chap7sec2-dimension}
 \include{chap7sec3-proper}
-\end{Didn't Read}
+
+\end{chapter2onwards}
 \appendix
 \begin{Appendix}
 \chapter{Appendix}
