@@ -62,6 +62,21 @@ $\calH$ denote the homotopy category of spaces. We define
 $\bHom_{S}(x,y) = \bHom_{\h{S}}(x,y) \in \calH$ to be the object of $\calH$ representing
 the space of maps from $x$ to $y$ in $S$. Here $\h{S}$ denotes the homotopy category of $S$, regarded as a $\calH$-enriched category (Definition \ref{tulkas}). 
 \end{definition}
+\begin{shaded}
+Given a topological or a simplicial category $\calC$, we manifestly have morphism \emph{spaces} $\bHom_{\calC}(X,Y)$. This is not so obvious for $\infty$-categories defined via simplicial sets.
+
+If we don't demand a simplicial model for the mapping space, we could define, given 0-simplices $x,y$ of a simplicial set $S$:
+\[\bHom_{S}(x,y): = \bHom_{\h{S}}(x,y) \in \calH.\]
+That is, we could pass to the homotopy category $\h S:=\h\sCoNerve[S]$ of $S$, and then take homs. Alternatively, to obtain a simplicial model, we could define:
+\[\bHom_{S}(x,y): =\bHom_{\sCoNerve[S]}(x,y),\]
+\begin{itemize}\squishlist
+\item[$+$:] Gives with an associative composition law.
+\item[$+$:] Definition always works.
+\item[$-$:] Construction a bit complicated.
+\item[$-$:] Not in general a Kan complex.
+\end{itemize}
+\end{shaded}
+
 
 \begin{warning}
 Let $S$ be a simplicial set. The notation $\bHom_{S}( X, Y)$ has two {\em very} different meanings.
@@ -78,6 +93,26 @@ $\bHom_{\sCoNerve[S]}(x,y)$ is quite complicated. Furthermore,
 $\bHom_{\sCoNerve[S]}(x,y)$ is usually not a Kan complex, so it
 can be difficult to extract algebraic invariants like homotopy
 groups, even when a concrete description of its simplices is known. 
+\begin{shaded}
+Instead, we define a mapping sSet  $\Hom^{\rght}_S(x,y)$, the space of \textbf{right morphisms} from $x$ to $y$, whose $n$-simplices are
+\[\textup{$z: \Delta^{n+1} \rightarrow S$ such that $z| \Delta^{ \{n+1 \}} = y$ and $z|
+\Delta^{ \{0, \ldots, n\} }$ is a constant simplex at the vertex
+$x$.}\]
+So a 0-simplex looks like: \!$\xymatrix@R=3mm@C=3mm{x\ar@{-}[rr]&&y}$\!, while a 1-simplex looks like a homotopy:
+\!\raisebox{3mm}{\smash{$\xymatrix@R=3mm@C=3mm{&x\ar@{-}[dl]_{\textup{\normalsize$x$}}\ar@{-}[dr]\\x\ar@{-}[rr]&&y}$}}\!.
+\begin{enumerate}\squishlist
+\item[$+$:] If $S$ is an $\infty$-category, then $\Hom^{\rght}_{S}(x,y)$ is a Kan complex.
+\item[$-$:] There is no
+obvious composition law
+$\Hom^{\rght}_{S}(x,y) \times \Hom^{\rght}_{S}(y,z) \rightarrow \Hom^{\rght}_{S}(x,z).$
+\item[$+$:] If $S$ is an $\infty$-category, then there is a composition law well defined up to a contractible space of choices (but unfortunately, no canonical choice).
+\item[$+$:] If $S$ is an $\infty$-category, then 
+there is a 
+(canonical) isomorphism between $\Hom^{\rght}_{S}(x,y)$ and $\bHom_{\sCoNerve[S]}(x,y)$
+in the homotopy category $\calH$.
+\end{enumerate}
+We can also define a space of left morphisms, which will be homotopy equivalent whenever $S$ is an $\infty$-category.
+\end{shaded}
 
 In order to address these shortcomings, we will introduce another simplicial set which
 represents the homotopy type $\bHom_{S}(x,y) \in \calH$, at least when $S$ is an $\infty$-category. 
