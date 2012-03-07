@@ -1,11 +1,14 @@
 \documentclass{report}[10pt, final]
 %\documentclass[10pt, openany, final, mytheorems]{flwide10}
 %\documentclass[10pt,final, openany, mytheorems]{flbook12}
-\usepackage{latexsym,framed,color, amscd, amsfonts, eucal, mathrsfs, amsmath, amssymb, amsthm, xypic, multind,version}
+\usepackage{latexsym,framed,color, amscd, amsfonts, eucal, mathrsfs, amsmath, amssymb, amsthm, xypic, multind,version, graphicx}
 %\usepackage{hyperref}
 \input{MichaelsPartialmacros.tex}
 
-%\def\excludeversion#1{\includeversion{#1}}
+\def\excludeversion#1{\includeversion{#1}}
+
+\newcommand{\iver}[1]{\includeversion{#1}}
+\newcommand{\xver}[1]{\excludeversion{#1}}
 
 \includeversion{chapters}
 \includeversion{Didn't Read}
@@ -14,34 +17,33 @@
 \excludeversion{intro}
 
 %% CHAPTER ONE
-{
+
 %\def\excludeversion#1{\includeversion{#1}}
 \includeversion{1 Overview of Higher Category Theory}
 \includeversion{1.1 Formalism}
-\excludeversion{1.1.1 Goals and Obstacles}
-\excludeversion{1.1.2 inf-Categories}
-\excludeversion{1.1.3 Equivalences of Top Cats}
-\excludeversion{1.1.4 Simplicial Categories}
-\excludeversion{1.1.5 inf-cats vs simplicial cats}
-
+\xver{1.1.1 Goals and Obstacles}
+\xver{1.1.2 inf-Categories}
+\xver{1.1.3 Equivalences of Top Cats}
+\xver{1.1.4 Simplicial Categories}
+\xver{1.1.5 inf-cats vs simplicial cats}
 \includeversion{1.2 language}
-\excludeversion{1.2.1 Opposite of an inf-cat}
-\excludeversion{1.2.2 Mapping spaces}
-\includeversion{1.2.3 The homotopy category}
-\excludeversion{1.2.4 Objects, morphisms, equivalences}
-\excludeversion{1.2.5 inf-gpoids and classical homotopy}
-\excludeversion{1.2.6 Commutativity vs coherence}
-\excludeversion{1.2.7 Functors between higher cats}
-\excludeversion{1.2.8 Joins of inf-cats}
-\excludeversion{1.2.9 Over- and under-categories}
-\excludeversion{1.2.10 F. faithful; E. surj functors}
-\excludeversion{1.2.11 Subcategories of inf-cats}
-\excludeversion{1.2.12 Initial and final objects}
-\excludeversion{1.2.13 Limits and colimits}
-\excludeversion{1.2.14 Presentations of inf-cats}
-\excludeversion{1.2.15 Set-Theoretic Technicalities}
-\excludeversion{1.2.16 The inf-cat of spaces}
-}
+\xver{1.2.1 Opposite of an inf-cat}
+\xver{1.2.2 Mapping spaces}
+\xver{1.2.3 The homotopy category}
+\xver{1.2.4 Objects, morphisms, equivalences}
+\xver{1.2.5 inf-gpoids and classical homotopy}
+\xver{1.2.6 Commutativity vs coherence}
+\xver{1.2.7 Functors between higher cats}
+\xver{1.2.8 Joins of inf-cats}
+\xver{1.2.9 Over- and under-categories}
+\xver{1.2.10 F. faithful; E. surj functors}
+\xver{1.2.11 Subcategories of inf-cats}
+\xver{1.2.12 Initial and final objects}
+\xver{1.2.13 Limits and colimits}
+\iver{1.2.14 Presentations of inf-cats}
+\iver{1.2.15 Set-Theoretic Technicalities}
+\iver{1.2.16 The inf-cat of spaces}
+
 
 
 \excludeversion{TOC}

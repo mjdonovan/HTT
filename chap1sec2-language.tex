@@ -99,7 +99,7 @@ Instead, we define a mapping sSet  $\Hom^{\rght}_S(x,y)$, the space of \textbf{r
 \Delta^{ \{0, \ldots, n\} }$ is a constant simplex at the vertex
 $x$.}\]
 So a 0-simplex looks like: \!$\xymatrix@R=3mm@C=3mm{x\ar@{-}[rr]&&y}$\!, while a 1-simplex looks like a homotopy:
-\!\raisebox{3mm}{\smash{$\xymatrix@R=3mm@C=3mm{&x\ar@{-}[dl]_{\textup{\normalsize$x$}}\ar@{-}[dr]\\x\ar@{-}[rr]&&y}$}}\!.
+\!\raisebox{3mm}{\smash{$\xymatrix@R=3mm@C=3mm{&x\ar@{-}[dl]_{\textup{\normalsize$x$}}\ar@{-}[dr]\\x\ar@{-}[rr]&&y}$}}
 \begin{enumerate}\squishlist
 \item[$+$:] If $S$ is an $\infty$-category, then $\Hom^{\rght}_{S}(x,y)$ is a Kan complex.
 \item[$-$:] There is no
@@ -186,6 +186,27 @@ For every ordinary category $\calC$, the nerve $\Nerve(\calC)$ is an $\infty$-ca
 Informally, we can describe the situation as follows: the nerve functor is a fully faithful inclusion from the bicategory of categories to the $\infty$-bicategory of $\infty$-categories.
 Moreover, this inclusion has a left adjoint:
 
+\begin{shaded}
+We have adjunctions:
+$\vcenter{\xymatrix{
+\Set_\Delta
+\ar@<.5ex>[r]^-{\sCoNerve[ \bigdot]}
+\ar@/^2.62em/[rr]^-{h}
+&%r1c1
+\Cat_\Delta
+\ar@<.5ex>[r]^-{h}
+\ar@<.5ex>[l]^-{N^{\textup{simp}}}
+&%r1c2
+\Cat
+\ar@{^{(}->}@<.5ex>[l]^-{i}
+\ar@/^2.62em/[ll]^-{N}
+%r1c3
+}}$
+\begin{itemize}\squishlist
+\setlength{\parindent}{.25in}
+\item There are two obvious paths from $\Cat_\Delta$ to $\Cat$, which only agree when on fibrant simplicial categories.
+\end{itemize}
+\end{shaded}
 \begin{proposition}\label{leftadj}
 The nerve functor $\Cat \rightarrow \sSet$ is right adjoint to the functor
 $\h: \sSet \rightarrow \Cat$, which associates to every simplicial set $S$ its
@@ -258,6 +279,14 @@ $$ \xymatrix{
 & C' \ar[dr]^{\id_{C'}} & \\
 C \ar[ur]^{\phi} \ar[rr]^{\phi'} & & C'.}$$
 In this case, we say that $\sigma$ is a {\it homotopy} between $\phi$ and $\phi'$.\index{gen}{homotopy!between morphisms of $\calC$}
+
+\begin{shaded}
+\begin{itemize}\squishlist
+\setlength{\parindent}{.25in}
+\item (Apparently because of the above adjunction) we can describe the homotopy category of $S\in\Set_\Delta$ by the obvious generators and relations.
+\item If $S$ is an $\infty$-category, we have a notion of homotopy of edges (an equivalence relation that is in fact self dual). We may use this to define $\pi(\calC)$, which, when $S$ is an $\infty$-category, is a category isomorphic to the homotopy category.
+\end{itemize}
+\end{shaded}
 
 \begin{proposition}\label{extneeded}
 Let $\calC$ be an $\infty$-category, and let $C$ and $C'$ be objects of
@@ -401,6 +430,39 @@ of $S$ are edges $\Delta^1 \rightarrow S$. A morphism $\phi: \Delta^1 \rightarro
 we will often denote this by writing $\phi: X \rightarrow Y$.\index{gen}{object!of an $\infty$-category}\index{gen}{morphism!in an $\infty$-category}
 If $X: \Delta^0 \rightarrow S$ is an object of $S$, we will write
 $\id_X = s_0(X): X \rightarrow X$ and refer to this as the {\it identity morphism} of $X$.
+\begin{shaded}
+The notion of \textbf{equivalence} in a higher category is always \emph{a map that becomes an isomorphism is the homotopy category}.
+
+We have proposition \ref{rooot} that applies to topoligcal categories. It is basically the best possible thing we could have expected.
+
+In $\infty$-categories, ``$\phi$ is an equivalence if and only if, for every $n \geq 2$ and every map
+$f_0: \Lambda^n_0 \rightarrow \calC$ such that $f_0 | \Delta^{\{0,1\}} = \phi$,
+there exists an extension of $f_0$ to $\Delta^n$''. For example, we need to be able to fill
+\[\vcenter{
+\def\objectstyle{\scriptstyle}
+\xymatrix@R=6mm@C=10mm@!0{
+&%r1c1
+1&%r1c2
+\\%r1c3
+0
+\ar[rr]
+\ar[ur]^-{\phi}&%r2c1
+&%r2c2
+2%r2c3
+}}\textup{\qquad in particular\qquad }\vcenter{
+\def\objectstyle{\scriptstyle}
+\xymatrix@R=6mm@C=10mm@!0{
+&%r1c1
+1&%r1c2
+\\%r1c3
+0
+\ar[rr]^{\id}
+\ar[ur]^-{\phi}&%r2c1
+&%r2c2
+2%r2c3
+}}\]
+\rednote{Because of the symmetry in the definition, we can swap the 0 for an $n$, right?}
+\end{shaded}
 
 If $f,g: X \rightarrow Y$ are two morphisms in a higher category $\calC$, then $f$ and $g$
 are {\it homotopic} if they determine the same morphism in the homotopy category $\h{\calC}$. In the setting of $\infty$-categories, this coincides with the notion of homotopy introduced in the previous section. In the setting of
@@ -488,6 +550,18 @@ The proof requires some ideas which we have not yet introduced, and will be give
 \end{1.2.4 Objects, morphisms, equivalences}
 \subsection{$\infty$-Groupoids and Classical Homotopy Theory}
 \begin{1.2.5 inf-gpoids and classical homotopy}
+\begin{shaded}
+The $\infty$-categories that are $\infty$-groupoids are exactly the Kan complexes. Thus the theory of $\infty$-groupoids is equivalent to classical homotopy theory.
+
+We have an adjunction between the following full subcategories of $\sSet$:
+\[\xymatrix@R=.3cm@C=2cm{
+\mathsf{KanCx}  \ar@{^{(}->}@<.6ex>[r]^{i}&
+\Cat_\infty  \ar@<.4ex>[l]^{(\DASH )'}\\
+%X \ar@{|->}[r] & FX\\
+%GY             & Y \ar@{|->}[l]
+}\]
+This takes an $\infty$-category to the largest simplicial subset containing only equivalences. Moreover $(\DASH )'$ sends categorical equivalence to homotopy equivalence.
+\end{shaded}
 Let $\calC$ be an $\infty$-category. We will say that $\calC$ is an {\it $\infty$-groupoid} if the homotopy category $\h{\calC}$ is a groupoid: in other words, if every morphism in $\calC$ is an equivalence. In \S \ref{highcat}, we asserted that the theory of $\infty$-groupoids is equivalent to classical homotopy theory. We can now formulate this idea in a very precise way:
 
 \begin{proposition}[Joyal \cite{joyalpub}]\label{greenwich}\index{gen}{$\infty$-groupoid}
@@ -672,6 +746,11 @@ of this statement, we refer the reader to Corollary \ref{strictify}).
 \end{1.2.6 Commutativity vs coherence}
 \subsection{Functors between Higher Categories}\label{funcback}
 \begin{1.2.7 Functors between higher cats}
+\begin{shaded}
+There is an $\infty$-category of functors from a simplicial set to an $\infty$-category. The construction sends categorical equivalence in either variable to categorical equivalence.
+
+This stuff is harder for topological categories, as not all topological categories are cofibrant.
+\end{shaded}
 The notion of a homotopy coherent diagram in an higher category
 $\calC$ is a special case of the more general notion of a functor
 $F: \calI \rightarrow \calC$ between higher categories
@@ -727,6 +806,17 @@ The proof makes use of the Joyal model structure on $\sSet$, and will be given i
 \end{1.2.7 Functors between higher cats}
 \subsection{Joins of $\infty$-Categories}\label{join}
 \begin{1.2.8 Joins of inf-cats}
+\begin{shaded}
+There are notions of
+\begin{itemize}\squishlist
+\setlength{\parindent}{.25in}
+\item the join of categories
+\item the join of simplicial sets
+\end{itemize}
+These two are compatible via the nerve, and the join of $\infty$-categories is an $\infty$-category.
+
+We define the {\it left} and {\it right cone} $K^{\triangleleft}$ and $K^{\triangleright}$ to be $\Delta^0 \join K$ and $K\join\Delta^0$.
+\end{shaded}
 Let $\calC$ and $\calC'$ be ordinary categories. We will define a
 new category $\calC \join \calC'$, called the {\it join} of $\calC$ and
 $\calC'$. An object of $\calC \join \calC'$ is either an object of
@@ -816,6 +906,13 @@ the join $\Delta^0 \join K$. Dually, the {\it right cone} $K^{\triangleright}$ i
 \end{1.2.8 Joins of inf-cats}
 \subsection{Overcategories and Undercategories}\label{slices}
 \begin{1.2.9 Over- and under-categories}
+\begin{shaded}
+There is a notion of the overcategory $S_{/p}$, when $p:K\to S$ is any map of simplicial sets, defined by:
+\[\Hom_{\sSet}(Y, S_{/p}) = \Hom_{p}( Y \join K, S)=\Hom(Y\join K,S)\times_{\Hom(K,S)}\{p\}\]
+The 0-simplices of $S_{/p}$ are then maps $K^{\triangleleft}\to S$ which restrict to $p$ on $K$. This should be viewed as a compaitble set of maps from a chosen object to the image of $K$.
+
+By proposition \ref{gorban3}, passing to overcategories is well-behaved. The $\infty$-categorical notion of overcategory generalises the classical notion.
+\end{shaded}
 Let $\calC$ be an ordinary category, and $X \in \calC$ an object.
 The {\it overcategory} $\calC_{/X}$ is defined as follows:\index{gen}{overcategory}
 the objects of $\calC_{/X}$ are
@@ -908,6 +1005,9 @@ then there is a canonical isomorphism $\Nerve(\calC)_{/X} \simeq \Nerve (\calC_{
 \subsection{Fully Faithful and Essentially Surjective Functors}
 \begin{1.2.10 F. faithful; E. surj functors}
 \begin{definition}\label{faulfa}\index{gen}{essentially surjective}
+\begin{shaded}
+\emph{Essential surjectivity} and being \emph{fully faithful} are always defined in terms of the homotopy category.
+\end{shaded}
 Let $F: \calC \rightarrow \calD$ be a functor between topological categories (simplicial categories, simplicial sets). We will say that $F$ is {\it essentially surjective} if the induced functor 
 $\h{F}: \h{\calC} \rightarrow \h{\calD}$ is essentially surjective (that is, if every object of $\calD$ is
 equivalent to $F(X)$ for some $X \in \calC$). 
@@ -926,6 +1026,9 @@ Just as in ordinary category theory, a functor $F$ is an equivalence if and only
 \end{1.2.10 F. faithful; E. surj functors}
 \subsection{Subcategories of $\infty$-Categories}
 \begin{1.2.11 Subcategories of inf-cats}
+\begin{shaded}
+We restrict the meaning of  `\textbf{subcategory} of an $\infty$-category $\calc$'. One chooses a subcategory $(\h\calc)'$ of the homotopy category $\h\calc$, and looks at the simplicial subset $\calc'$ of $\calc$ consisting of those simplices $\sigma:\Delta^n\to\calc$ such that $\sigma|_{\{i,i+1\}}$ maps into $(\h\calc)'$ for all $i$.
+\end{shaded}
 Let $\calC$ be an $\infty$-category, and let $(\h{\calC})' \subseteq \h{\calC}$ be a subcategory of its homotopy category. We can then form a pullback diagram of simplicial sets
 $$ \xymatrix{ \calC' \ar[r] \ar[d] & \calC \ar[d] \\
 \Nerve (\h{\calC})' \ar[r] & \Nerve (\h{ \calC}). }$$
@@ -977,7 +1080,58 @@ Let $\calC$ be a simplicial set. A
 vertex $X$ of $\calC$ is {\it strongly final} if the projection $\calC_{/X}
 \rightarrow \calC$ is a trivial fibration of simplicial sets. 
 \end{definition}
+\begin{shaded}
+A
+vertex $X$ of $\calC\in\sSet$ is {\it strongly final} if the projection $\calC_{/X}
+\rightarrow \calC$ is a trivial fibration of simplicial sets. That is, if the lifting property (at left) is satisfied for all $n$.
+\[\vcenter{\xymatrix{
+\partial\Delta^n
+\ar[r]
+\ar[d]
+&%r1c1
+\calc_{/X}
+\ar[d]
+\\%r1c2
+\Delta^n
+\ar@{-->}[ur]
+\ar[r]
+&%r2c1
+\calc%r2c2
+}}\textup{\qquad i.e.\qquad }
+\vcenter{\xymatrix{
+\partial\Delta^n
+\ar[d]
+\ar[r]
+&%r1c1
+\partial\Delta^n\join\Delta^0
+\ar[d]
+\ar@/^2em/[dd]
+\\%r1c2
+\Delta^n
+\ar[r]
+\ar[rd]
+&%r2c1
+\calc\\%r2c2
+&%r3c1
+\Delta^n\join\Delta^0
+\ar@{-->}[u]
+%r3c2
+}}\]
+The right hand diagram states that whenever one has a cone with ceiling $\partial\Delta^n$ in $\calc$ balancing on the vertex $X$, it can be filled to a cone with ceiling \emph{any chosen} filling of $\partial\Delta^n$.
 
+In an $\infty$-category, TFAE:
+\begin{itemize}\squishlist
+\setlength{\parindent}{.25in}
+\item $X$ is a final object (i.e.\ final in the homotopy category);
+\item $X$ is strongly final;
+\item all the mapping spaces $\Hom^{\rght}_{\calC}(Z,X)$ are contractible. (They are called spaces since they're automatically Kan complexes).
+\end{itemize}
+\begin{itemise}
+\setlength{\parindent}{.25in}
+\item The notion of final in a simplicial set generalises that in classical category theory, via the nerve.
+\item The full subcategory of an $\infty$-category spanned by the final vertices is (obviously) either empty of a contractible Kan complex, so that final objects are `unique'.
+\end{itemise}
+\end{shaded}
 In other words, a vertex $X$ of $\calC$ is strongly final if and only if any
 map $f_0: \bd \Delta^n \rightarrow \calC$ such that
 $f_0(n) = X$ can be extended to a map $f: \Delta^n \rightarrow S$.
@@ -1043,6 +1197,12 @@ object of $\calC$.
 \end{1.2.12 Initial and final objects}
 \subsection{Limits and Colimits}\label{limitcolimit}
 \begin{1.2.13 Limits and colimits}
+\begin{shaded}
+A \textbf{colimit} (resp.\ \textbf{limit})  for $p:k\to\calc$, for $\calc$ an $\infty$-category, is an initial (resp.\ terminal)  object of $\calC_{p/}$ (resp.\ $\calC_{p/}$).
+
+This agrees with the classical notion of homotopy (co)limits, after taking the nerve of a topological category.
+\rednote{I haven't read proposition \ref{needed17}.}
+\end{shaded}
 An important consequence of the distinction between homotopy
 commutativity and homotopy coherence is that the appropriate
 notions of limit and colimit in a higher category
@@ -1193,6 +1353,9 @@ Finally, the ``only if'' direction of $(2)$ follows from $(1)$, since any two co
 \end{1.2.13 Limits and colimits}
 \subsection{Presentations of $\infty$-Categories}
 \begin{1.2.14 Presentations of inf-cats}
+\begin{shaded}
+Here he seems to forecast a future discussion of presentations of $\infty$-categories.
+\end{shaded}
 Like many other types of mathematical structures, $\infty$-categories can be described by generators and relations. In particular, it makes sense to speak of a {\it
 finitely presented} $\infty$-category $\calC$. Roughly speaking, $\calC$ is finitely presented
 if it has finitely many objects and its morphism spaces are determined
@@ -1254,6 +1417,9 @@ regard it as an $\infty$-category which is ``generated by'' $S$. The simplicial 
 \end{1.2.14 Presentations of inf-cats}
 \subsection{Set-Theoretic Technicalities}
 \begin{1.2.15 Set-Theoretic Technicalities}
+\begin{shaded}
+He discusses some approaches to the necessary set theory, and opts for (1), taking a sufficient supply of Grothendieck universes.
+\end{shaded}
 In ordinary category theory, one frequently encounters categories in which the collection of objects
 is too large to form a set. Generally speaking, this does not create
 any difficulties so long as we avoid doing anything which is obviously illegal
@@ -1319,6 +1485,9 @@ The existence of the strongly inaccessible cardinal $\kappa$ cannot be proven fr
 \end{1.2.15 Set-Theoretic Technicalities}
 \subsection{The $\infty$-Category of Spaces}\label{introducingspaces}
 \begin{1.2.16 The inf-cat of spaces}
+\begin{shaded}
+He makes the following convenient choice of $\SSet$, the \textbf{$\infty$-category of spaces}. Let $\SSet$ be the simplicial nerve of the simplicial category of Kan complexes.
+\end{shaded}
 The category of sets plays a central role in classical category theory. The main reason
 is that {\em every} category $\calC$ is enriched over sets: given a pair of objects
 $X,Y \in \calC$, we may regard $\Hom_{\calC}(X,Y)$ as an object of $\Set$.
